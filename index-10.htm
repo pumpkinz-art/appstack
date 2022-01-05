@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+
+      <meta name='viewport' content='width=device-width, initial-scale=1'>
+  
+  <title>FullCalendar - JavaScript Event Calendar</title>
+
+        
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+    <meta name='description' content='Full-sized, drag &amp; drop event calendar in JavaScript'>
+  <meta name='keywords' content='calendar, JavaScript, events, drag and drop'>
+  <meta name='author' content='Adam Shaw'>
+
+        
+
+
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Muli:300,400,600,800,900' />
+
+
+<link href='/assets/base.css?1636782149' rel='stylesheet' />
+
+
+
+
+
+        <link href='/assets-more/homepage.css?9Oe3kCtdskw8sjhfl299ju4Ld' rel='stylesheet' />
+
+        
+
+
+
+  <script src='https://dove.fullcalendar.io/script.js' data-site='SURPPYIE' defer></script>
+
+
+
+
+
+
+
+
+
+    <script src='/assets-more/homepage.js?9Oe3kCtdskw8sjhfl299ju4Ld'></script>
+
+</head>
+<body class='responsive-enabled'>
+
+  
+<div class='topbar'>
+  <div class='topbar__container container'>
+
+    <div class='topbar__branding'>
+      <a class='branding' href='/'>
+        <div class='branding-graphic'></div>
+        <div class='branding-text'>FullCalendar</div>
+      </a>
+    </div>
+
+    <div class='topbar__nav'>
+      <div class='topbar__nav-item' id='demos-nav-item'>
+        <a class='topbar__nav-handle' href='/demos'>
+          Demos
+        </a>
+      </div>
+      <div class='topbar__nav-item '>
+        <a class='topbar__nav-handle' href='/docs'>
+          Docs
+        </a>
+      </div>
+      <div class='topbar__nav-item '>
+        <div class='topbar__nav-handle'>
+          Support
+        </div>
+        <div class='topbar__flyout-wrap'>
+          <div class='topbar__flyout'>
+            <div class='topbar__flyout-item'>
+              <a class='topbar__flyout-handle' href='/getting-help'>
+                Getting Help
+              </a>
+            </div>
+            <div class='topbar__flyout-item'>
+              <a class='topbar__flyout-handle' href='/reporting-bugs'>
+                Reporting Bugs
+              </a>
+            </div>
+            <div class='topbar__flyout-item'>
+              <a class='topbar__flyout-handle' href='/requesting-features'>
+                Requesting Features
+              </a>
+            </div>
+            <div class='topbar__flyout-item'>
+              <a class='topbar__flyout-handle' href='/contributing'>
+                Contributing
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='topbar__nav-item'>
+        <a class='topbar__nav-handle button button--lightblue button--outlined' href='/pricing'>
+          Pricing
+        </a>
+      </div>
+    </div>
+
+    <div class='topbar__notice'>
+      
+      <a class='topbar__notice-link' href='/blog/2021/11/accessibility-enhancements-in-v510'>
+        <span style='color:#FAC863'>Nov 3</span> &mdash; Accessibility Enhancements in v5.10
+      </a>
+    </div>
+
+    <div class='topbar__github'>
+      <a class='topbar__github-link' href='https://github.com/fullcalendar/fullcalendar' target='_blank'>
+        <div class='topbar__github-graphic'></div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+  
+  <div class='hp-intro-section hp-section'>
+    <div class='container'>
+      <div class='hp-split'>
+        <div class='hp-intro-verbage'>
+          <h1>
+            The Most Popular
+            <strong>
+              JavaScript<br>Calendar
+            </strong>
+          </h1>
+          <div class='hp-intro-verbage__buttons'>
+            <a class='hp-button hp-button--blue' href='https://fullcalendar.io/docs/getting-started'>Get started</a>
+            <a class='hp-intro-verbage__demo-button hp-button hp-button--yellow' href='https://fullcalendar.io/demos'>View demos</a>
+          </div>
+        </div>
+        <div class='hp-intro-demo'>
+          <div class='hp-intro-demo__calendar'></div>
+          <div class='hp-intro-demo__buttons'>
+            <a class='hp-intro-demo__demo-button hp-button hp-button--yellow' href='https://fullcalendar.io/demos'>View demos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='hp-space-section hp-section hp-dark-bg'>
+    <div class='hp-divider hp-skew'><div></div></div>
+    <div class='hp-section__inner'>
+      <div class='hp-space-section__color-bg hp-section__bg hp-skew'>
+        <div class='hp-space-bg-container container'>
+          <div class='hp-space-editor-bg'></div>
+        </div>
+      </div>
+      <div class='hp-space-section__image-bg hp-section__bg'>
+        <div class='hp-space-bg-container container'>
+          <div class='hp-space-editor'>
+            <div class='hp-space-editor__line-numbers'>
+                              1<br />
+                              2<br />
+                              3<br />
+                              4<br />
+                              5<br />
+                              6<br />
+                              7<br />
+                              8<br />
+                              9<br />
+                              10<br />
+                              11<br />
+                              12<br />
+                              13<br />
+                              14<br />
+                              15<br />
+                              16<br />
+                              17<br />
+                              18<br />
+                              19<br />
+                          </div>
+            <div class='hp-space-editor__code-area'>
+                              <div class='hp-space-editor__code' data-tech='react'>
+                  <pre><code>
+npm install @fullcalendar/react
+npm install @fullcalendar/daygrid
+
+import React from 'react'
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'
+
+export const DemoApp = () =&gt; (
+  &lt;FullCalendar
+    plugins={[dayGridPlugin]}
+    initialView=&quot;dayGridMonth&quot;
+  /&gt;
+)</code></pre>
+                </div>
+                              <div class='hp-space-editor__code' data-tech='vue'>
+                  <pre><code>npm install @fullcalendar/vue
+npm install @fullcalendar/daygrid
+
+&lt;template&gt;
+  &lt;FullCalendar :options=&quot;calendarOptions&quot; /&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import FullCalendar from '@fullcalendar/vue'
+import dayGridPlugin from '@fullcalendar/daygrid'
+
+export default {
+  components: { FullCalendar },
+  data() {
+    return {
+      calendarOptions: {
+        plugins: [dayGridPlugin],
+        initialView: 'dayGridMonth'
+      }
+    }
+  }</code></pre>
+                </div>
+                              <div class='hp-space-editor__code' data-tech='angular'>
+                  <pre><code>npm install @fullcalendar/angular
+
+import { Component } from '@angular/core'
+import { CalendarOptions } from '@fullcalendar/angular'
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth',
+    events: [
+      { title: 'event 1', date: '2019-04-01' },
+      { title: 'event 2', date: '2019-04-02' }
+    ]
+  }
+}</code></pre>
+                </div>
+                              <div class='hp-space-editor__code' data-tech='js'>
+                  <pre><code>npm install @fullcalendar/core
+npm install @fullcalendar/daygrid
+
+import { Calendar } from '@fullcalendar/core'
+import dayGridPlugin from '@fullcalendar/daygrid'
+
+let calendar = new Calendar(calendarEl, {
+  plugins: [dayGridPlugin],
+  initialView: 'dayGridMonth',
+  headerToolbar: {
+    left: 'prev,next today',
+    center: 'title',
+    right: 'dayGridMonth,dayGridWeek'
+  }
+})
+
+calendar.render()</code></pre>
+                </div>
+                          </div>
+          </div>
+        </div>
+      </div>
+      <div class='hp-section__fg'>
+        <div class='container container--always-spacious' id='tech-container'>
+          <!-- NOTE: this content is replace via JS -->
+          <h2>Built for React</h2>
+          <p class='hp-section-desc'>FullCalendar generates real React virtual DOM nodes so you can leverage Fiber, React's highly optimized rendering engine.</p>
+          <a class='hp-button hp-button--yellow' href='https://fullcalendar.io/docs/react'>Learn more</a>
+        </div>
+      </div>
+    </div>
+    <div class='hp-divider hp-skew'><div></div></div>
+  </div>
+
+  <div class='hp-sky-section hp-section'>
+    <div class='hp-section__inner'>
+      <div class='hp-sky-section__color-bg hp-section__bg hp-skew'></div>
+      <div class='hp-sky-section__image-bg hp-section__bg'>
+        <div class='hp-sky-section__lightning'></div>
+      </div>
+      <div class='hp-section__fg'>
+        <div class='container container--always-spacious'>
+          <div class='hp-split'>
+            <div class='hp-powerful hp-dark-bg hp-animation hp-animation-trigger'>
+              <h3 class='hp-section-title'>
+                Powerful
+              </h3>
+              <p class='hp-section-desc'>
+                With over 300 settings, and more being
+                added every release, FullCalendar can
+                do just about anything.
+              </p>
+              <a class='hp-button hp-button--yellow hp-button--mild-shadow' href='https://fullcalendar.io/docs'>Learn more</a>
+            </div>
+            <div class='hp-lightweight hp-neutral-bg hp-animation-trigger'>
+              <div class='hp-lightweight__content hp-animation'>
+                <h3 class='hp-section-title'>
+                  Lightweight
+                </h3>
+                <p class='hp-section-desc'>
+                  Reduce your project's bundle
+                  size by using FullCalendar's
+                  modular plugins.
+                </p>
+                <a class='hp-button hp-button--blue' href='https://fullcalendar.io/docs/plugin-index'>Learn more</a>
+              </div>
+              <div class='hp-lightweight__sprites'>
+                <div class='hp-lightweight__sprites-inner'>
+                  <div class='hp-lightweight__balloon-big hp-animation'>
+                    <img
+                      src='https://fullcalendar.io/assets-more/images/homepage/balloon-big.svg?9Oe3kCtdskw8sjhfl299ju4Ld'
+                      alt='Amazon'
+                      width='196'
+                      height='266'
+                    >
+                  </div>
+                  <div class='hp-lightweight__balloon-small1 hp-animation'>
+                    <img
+                      src='https://fullcalendar.io/assets-more/images/homepage/balloon-small1.svg?9Oe3kCtdskw8sjhfl299ju4Ld'
+                      alt='Amazon'
+                      width='82'
+                      height='112'
+                    >
+                  </div>
+                  <div class='hp-lightweight__balloon-small2 hp-animation'>
+                    <img
+                      src='https://fullcalendar.io/assets-more/images/homepage/balloon-small2.svg?9Oe3kCtdskw8sjhfl299ju4Ld'
+                      alt='Amazon'
+                      width='95'
+                      height='127'
+                    >
+                  </div>
+                  <div class='hp-lightweight__balloon-small3 hp-animation'>
+                    <img
+                      src='https://fullcalendar.io/assets-more/images/homepage/balloon-small3.svg?9Oe3kCtdskw8sjhfl299ju4Ld'
+                      alt='Amazon'
+                      width='83'
+                      height='112'
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='hp-mountain-section hp-section'>
+    <div class='hp-divider hp-skew'><div></div></div>
+    <div class='hp-section__inner'>
+      <div class='hp-mountain-section__color-bg hp-section__bg hp-skew'></div>
+      <div class='hp-mountain-image-bg hp-section__bg'>
+        <div class='hp-mountain-image-bg__left'></div>
+        <div class='hp-mountain-image-bg__center'>
+          <div>
+            <img
+              src='https://fullcalendar.io/assets-more/images/homepage/mountain.svg?9Oe3kCtdskw8sjhfl299ju4Ld'
+              width='2205'
+              height='748'
+            >
+          </div>
+        </div>
+        <div class='hp-mountain-image-bg__right'></div>
+      </div>
+      <div class='hp-section__fg'>
+        <div class='container'>
+          <div class='hp-split'>
+            <div class='hp-mountain-logos hp-animation hp-animation-trigger'>
+              <h3 class='hp-mountain-logos__title'>Some of our customers</h3>
+              <div class='hp-mountain-logos__content'>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/amazon.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/amazon.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/amazon@2x.png 2x'
+                    alt='Amazon'
+                    width='124'
+                    height='38'
+                    style='margin-top:11%'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/uber.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/uber.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/uber@2x.png 2x'
+                    alt='Uber'
+                    width='109'
+                    height='38'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/netflix.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/netflix.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/netflix@2x.png 2x'
+                    alt='Netflix'
+                    width='124'
+                    height='34'
+                    style='margin-top:4%'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/intuit.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/intuit.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/intuit@2x.png 2x'
+                    alt='Intuit'
+                    width='124'
+                    height='36'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/samsung.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/samsung.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/samsung@2x.png 2x'
+                    alt='Samsung'
+                    width='124'
+                    height='41'
+                    style='margin-top:9%'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/yahoo.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/yahoo.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/yahoo@2x.png 2x'
+                    alt='Yahoo'
+                    width='124'
+                    height='35'
+                    style='margin-top:11%'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/paypal.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/paypal.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/paypal@2x.png 2x'
+                    alt='PayPal'
+                    width='124'
+                    height='35'
+                    style='margin-top:13%'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/akamai.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/akamai.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/akamai@2x.png 2x'
+                    alt='Akamai'
+                    width='124'
+                    height='51'
+                  >
+                </div>
+                <div style='width:37%'>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/astrazeneca.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/astrazeneca.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/astrazeneca@2x.png 2x'
+                    alt='AstraZeneca'
+                    width='211'
+                    height='51'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/pfizer.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/pfizer.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/pfizer@2x.png 2x'
+                    alt='Pfizer'
+                    width='120'
+                    height='76'
+                  >
+                  </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/cisco.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/cisco.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/cisco@2x.png 2x'
+                    alt='Cisco'
+                    width='124'
+                    height='65'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/deloitte.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/deloitte.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/deloitte@2x.png 2x'
+                    alt='Deloitte'
+                    width='124'
+                    height='24'
+                    style='margin-top:7%'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/accenture.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/accenture.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/accenture@2x.png 2x'
+                    alt='Accenture'
+                    width='124'
+                    height='34'
+                  >
+                </div>
+                <div>
+                  <img
+                    src='https://fullcalendar.io/assets-more/images/homepage/logos/nasa.png'
+                    srcset='https://fullcalendar.io/assets-more/images/homepage/logos/nasa.png 1x, https://fullcalendar.io/assets-more/images/homepage/logos/nasa@2x.png 2x'
+                    alt='Nasa'
+                    width='108'
+                    height='85'
+                    style='margin-top:-15%'
+                  >
+                </div>
+              </div>
+            </div>
+            <div class='hp-mountain-stats hp-animation hp-animation-trigger'>
+              <div class='hp-mountain-stats__item'>
+                <h4>Over <strong>1M</strong></h4>
+                <strong>NPM</strong> downloads per month
+              </div>
+              <div class='hp-mountain-stats__item'>
+                <h4>Over <strong>20M</strong></h4>
+                <strong>CDN</strong> downloads per month
+              </div>
+              <div class='hp-mountain-stats__item'>
+                <h4>Over <strong>13K</strong></h4>
+                <strong>GitHub</strong> stargazers
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='hp-ocean-section hp-section'>
+    <div class='hp-divider'><div></div></div>
+    <div class='hp-section__inner'>
+      <div class='hp-section__bg hp-ocean-bg'><div></div></div>
+      <div class='hp-section__fg'>
+        <div class='container container--always-spacious'>
+          <div class='hp-split'>
+            <div class='hp-open-source hp-dark-bg hp-animation-trigger'>
+              <div class='hp-open-source__content hp-animation'>
+                <h3 class='hp-section-title'>
+                  Open Source...
+                </h3>
+                <p class='hp-section-desc'>
+                  With over 10 years of open source and over 120
+                  contributors, FullCalendar will always have a free and
+                  open source core.
+                </p>
+                <a class='hp-button hp-button--blue hp-button--mild-shadow' href='https://fullcalendar.io/license'>Learn more</a>
+              </div>
+              <div class='hp-open-source__sprites'>
+                <div class='hp-open-source__sprites-inner'>
+                  <div class='hp-open-source__octocat hp-animation'>
+                    <img
+                      src='https://fullcalendar.io/assets-more/images/homepage/octocat.png'
+                      srcset='https://fullcalendar.io/assets-more/images/homepage/octocat.png 1x, https://fullcalendar.io/assets-more/images/homepage/octocat@2x.png 2x'
+                      width='307'
+                      height='350'
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='hp-premium hp-dark-bg hp-animation-trigger'>
+              <div class='hp-premium__content hp-animation'>
+                <h3 class='hp-section-title'>
+                  Supercharged.
+                </h3>
+                <p class='hp-section-desc'>
+                  Level-up by purchasing premium
+                  plugins and support.
+                </p>
+                <a class='hp-button hp-button--yellow' href='https://fullcalendar.io/pricing'>Learn more</a>
+              </div>
+              <div class='hp-premium__sprites'>
+                <div class='hp-premium__sprites-inner'>
+                  <div class='hp-premium__narwhal-small hp-animation'>
+                    <img
+                      src='https://fullcalendar.io/assets-more/images/homepage/narwhal-small.png'
+                      srcset='https://fullcalendar.io/assets-more/images/homepage/narwhal-small.png 1x, https://fullcalendar.io/assets-more/images/homepage/narwhal-small@2x.png 2x'
+                      width='465'
+                      height='416'
+                    >
+                  </div>
+                  <div class='hp-premium__narwhal-big hp-animation'>
+                    <img
+                      src='https://fullcalendar.io/assets-more/images/homepage/narwhal-big.png'
+                      srcset='https://fullcalendar.io/assets-more/images/homepage/narwhal-big.png 1x, https://fullcalendar.io/assets-more/images/homepage/narwhal-big@2x.png 2x'
+                      width='762'
+                      height='782'
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='hp-divider'><div></div></div>
+  </div>
+
+
+  
+<div class='footer'>
+  <div class='footer__container container'>
+    <div class='footer__left'>
+      <p>
+        <a href='/blog/2021/02/10percent-profits-to-effective-charities' style='color:inherit'>
+          <strong>10%</strong>
+          of profits donated to
+          <strong>effective charities</strong>
+        </a>
+      </p>
+      <p>
+        <a href='https://docs.google.com/forms/d/e/1FAIpQLSf9mPTzy0tMSRN53y0CSnHLgS6uwlne2sK-tcwIbUZzs_LOUA/viewform?usp=sf_link' target='_blank'>
+          Does your company use FullCalendar? Tell us &raquo;
+        </a>
+      </p>
+      
+    </div>
+    <div class='footer__right'>
+      <p>
+        &copy; 2021&nbsp; FullCalendar LLC
+      </p>
+      <ul class='inline-list'>
+        <li><a href='https://github.com/fullcalendar' target='_blank'>GitHub</a></li>
+        <li><a href='/license'>License</a></li>
+        <li><a href='/blog'>Blog</a></li>
+        <li><a href='/donate'>Donate</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+  </body>
+</html>
